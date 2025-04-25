@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { YoutubeServiceService } from 'src/app/services/youtube-service.service';
+import { YoutubeServiceService } from 'app/services/youtube-service.service';
+
 
 @Component({
     selector: 'app-landing',
