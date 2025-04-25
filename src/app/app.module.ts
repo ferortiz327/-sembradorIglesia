@@ -13,6 +13,7 @@ import { ComponentsModule } from './components/components.module';
 import { ExamplesModule } from './examples/examples.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { YoutubeServiceService } from './services/youtube-service.service';
 
 
 @NgModule({
@@ -27,11 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     RouterModule,
     ComponentsModule,
-    ExamplesModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [YoutubeServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
