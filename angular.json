@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/sembrador",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -55,12 +55,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sembrador:build"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "sembrador:build:production"
+              "browserTarget": "sembrador:build:production"
             },
             "development": {
-              "buildTarget": "sembrador:build:development"
+              "browserTarget": "sembrador:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b4029fa4-03a4-4073-ba2c-bea11a967a28"
   }
 }
