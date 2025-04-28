@@ -6,13 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
+
   dias: { nombre: string, actividades: string[] }[] = [
     { nombre: 'Lunes', actividades: [
         'Oración – 9:00 a.m. A 11:00 a.m.',
         'Sembrar para Cosechar – 6:30 p.m.',
+        'Servidores– 7:00 p.m.',
     ] },
     { nombre: 'Martes', actividades: [
-      'Oración – 9:00 a.m. A 11:00 a.m.',
       'Oración – 9:00 a.m. A 11:00 a.m.',
     ] },
     {
@@ -33,13 +34,13 @@ export class CalendarComponent {
       ]
     },
     { nombre: 'Sábado', actividades: [
+      'Oración – 6:00 a.m. A 7:00 a.m.',
       'Reunión de jóvenes – 4:30 p.m.',
       'Reunión de Damas – 5:00 p.m.',
     ] },
     {
       nombre: 'Domingo', actividades: [
         'Culto de adoración – 9:00 a.m.',
-        'Escuela dominical – 10:30 a.m.',
       ]
     }
   ];
