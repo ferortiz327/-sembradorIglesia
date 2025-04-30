@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -11,13 +12,18 @@ export class NavbarComponent implements OnInit {
     private sidebarVisible: boolean;
 
     scrollToFormulario() {
-        const formulario = document.getElementById('formulario');
-        if (formulario) {
-          formulario.scrollIntoView({ behavior: 'smooth' });
+        if (this.router.url === '/' || this.router.url === '/home') {
+            const formulario = document.getElementById('formulario');
+            if (formulario) {
+              formulario.scrollIntoView({ behavior: 'smooth' });
+            }
+          } else {
+            // Navega a home y pasa una bandera de que debe hacer scroll
+            this.router.navigate(['/home'], { state: { scrollToFormulario: true } });
+          }
         }
-      }
 
-    constructor(public location: Location, private element: ElementRef) {
+    constructor(public location: Location, private element: ElementRef, private router: Router) {
         this.sidebarVisible = false;
     }
 
