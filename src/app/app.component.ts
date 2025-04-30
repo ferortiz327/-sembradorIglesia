@@ -4,6 +4,8 @@ import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { filter, Subscription } from 'rxjs';
+import { ModalService } from './services/modal.service';
+import { ModalPromotionsComponent } from './components/modal-promotions/modal-promotions.component';
 
 @Component({
     selector: 'app-root',
@@ -13,17 +15,18 @@ import { filter, Subscription } from 'rxjs';
 export class AppComponent implements OnInit {
     private _router!: Subscription;
     @ViewChild(NavbarComponent) navbar!: NavbarComponent;
+    @ViewChild(ModalPromotionsComponent) actividadesModal!: ModalPromotionsComponent;
 
-    constructor( private renderer : Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element : ElementRef, public location: Location) {}
+    constructor(private renderer: Renderer2, private router: Router, @Inject(DOCUMENT,) private document: any, private element: ElementRef, public location: Location, private modalService: ModalService) { }
     ngOnInit() {
- 
-        var navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
+
+        var navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.pipe(
             filter((event): event is NavigationEnd => event instanceof NavigationEnd)
-          ).subscribe(event => {
+        ).subscribe(event => {
             if (window.outerWidth > 991) {
                 window.document.children[0].scrollTop = 0;
-            }else{
+            } else {
                 (window.document.activeElement as HTMLElement).scrollTop = 0;
             }
             this.navbar.sidebarClose();
@@ -50,16 +53,20 @@ export class AppComponent implements OnInit {
             body.classList.add('ie-background');
 
         }
+        // Esperamos a que Angular termine la inicialización
+        setTimeout(() => {
+            this.modalService.mostrarModalActividades();
+        }, 500); // Pequeño retraso para asegurar la renderización
 
+}
+removeFooter() {
+    var titlee = this.location.prepareExternalUrl(this.location.path());
+    titlee = titlee.slice(1);
+    if (titlee === 'signup' || titlee === 'nucleoicons') {
+        return false;
     }
-    removeFooter() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        titlee = titlee.slice( 1 );
-        if(titlee === 'signup' || titlee === 'nucleoicons'){
-            return false;
-        }
-        else {
-            return true;
-        }
+    else {
+        return true;
     }
+}
 }
