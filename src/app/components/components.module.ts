@@ -14,6 +14,8 @@ import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DonationsComponent } from './donations/donations.component';
+import { BeliefComponent } from './belief/belief.component';
+import { MaterialModule } from 'app/shared/material/material.module';
 
 @NgModule({
     imports: [
@@ -22,6 +24,7 @@ import { DonationsComponent } from './donations/donations.component';
         NgbModule,
         NouisliderModule,
         RouterModule,
+        MaterialModule
     ],
     declarations: [
         ComponentsComponent,
@@ -32,7 +35,8 @@ import { DonationsComponent } from './donations/donations.component';
         NgbdModalComponent,
         NgbdModalContent,
         CalendarComponent,
-        DonationsComponent
+        DonationsComponent,
+        BeliefComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent ]

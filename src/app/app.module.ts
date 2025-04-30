@@ -10,17 +10,23 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
-import { ExamplesModule } from './examples/examples.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { YoutubeServiceService } from './services/youtube-service.service';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialModule } from './shared/material/material.module';
+
+import { LOCALE_ID } from '@angular/core';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,9 +35,17 @@ import { YoutubeServiceService } from './services/youtube-service.service';
     RouterModule,
     ComponentsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbAccordionModule,
+    MaterialModule,
+    NgbNavModule
   ],
-  providers: [YoutubeServiceService],
+  exports: [
+    MaterialModule
+  ],
+  providers: [YoutubeServiceService,
+    { provide: LOCALE_ID, useValue: 'es' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
