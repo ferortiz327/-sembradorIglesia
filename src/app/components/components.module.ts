@@ -16,6 +16,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { DonationsComponent } from './donations/donations.component';
 import { BeliefComponent } from './belief/belief.component';
 import { MaterialModule } from 'app/shared/material/material.module';
+import { ModalPromotionsComponent } from './modal-promotions/modal-promotions.component';
 
 @NgModule({
     imports: [
@@ -36,9 +37,10 @@ import { MaterialModule } from 'app/shared/material/material.module';
         NgbdModalContent,
         CalendarComponent,
         DonationsComponent,
-        BeliefComponent
+        BeliefComponent,
+        ModalPromotionsComponent
     ],
     entryComponents: [NgbdModalContent],
-    exports:[ ComponentsComponent ]
+    exports:[ ComponentsComponent]
 })
 export class ComponentsModule { }
