@@ -39,4 +39,18 @@ export class LandingComponent implements OnInit {
     { img: './assets/img/carrusel/sembrar.png'},
     { img: './assets/img/carrusel/semilla.png'}
   ];
+
+
+  ngAfterViewInit() {
+    const state = window.history.state;
+    if (state && state.scrollToFormulario) {
+      // Espera un momento para asegurar que la vista esté renderizada
+      setTimeout(() => {
+        const formulario = document.getElementById('formulario');
+        if (formulario) {
+          formulario.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }
 }
