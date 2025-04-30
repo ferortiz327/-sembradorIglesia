@@ -91,3 +91,35 @@
     min-height: 700px;
 }
 
+
+.section {
+    padding: 70px 0;
+    position: relative;
+  
+    // Nuevas reglas para centrado
+    .container {
+        max-width: 1200px; // Ancho máximo del contenido
+        margin: 0 auto;    // Centrado horizontal
+        padding: 0 15px;   // Padding lateral para móviles
+        
+        // Centrar columnas
+        .row {
+            justify-content: center;
+        }
+        
+        // Centrar texto en todas las secciones
+        * {
+            text-align: center;
+        }
+        
+        // Excepciones para elementos que no deben centrarse
+        .text-left {
+            text-align: left !important;
+        }
+        
+        .text-right {
+            text-align: right !important;
+        }
+    }
+}
+
