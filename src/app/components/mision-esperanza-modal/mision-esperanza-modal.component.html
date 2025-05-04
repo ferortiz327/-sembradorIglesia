@@ -1,0 +1,116 @@
+<!-- Añade esto en tu template principal -->
+<ng-template #misionEsperanzaModal let-modal>
+  <div class="mission-modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Misión Esperanza</h3>
+      <button type="button" class="btn-close" (click)="modal.dismiss()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="modal-body">
+      <!-- Video Principal -->
+      <div class="mission-video-container">
+        <video controls class="mission-video">
+          <source src="./assets/videos/mision-esperanza.mp4" type="video/mp4">
+          Tu navegador no soporta videos HTML5
+        </video>
+      </div>
+      
+      <!-- Descripción -->
+      <div class="mission-description">
+        <p class="mission-text">
+          Llevamos el mensaje de fe, amor y servicio a comunidades en Bogotá, Ortega (Tolima) y Venezuela, 
+          compartiendo el evangelio y apoyando a quienes más lo necesitan.
+        </p>
+      </div>
+      
+      <!-- Sección por ubicaciones -->
+      <div class="location-sections">
+        <!-- Bogotá -->
+        <div class="location-card">
+          <div class="location-header">
+            <i class="fas fa-church"></i>
+            <h4>Bogotá</h4>
+          </div>
+          <div class="location-content">
+            <img src="./assets/img/misiones/bogota.jpg" alt="Misión Bogotá" class="location-img">
+            <p>
+              Trabajamos en los barrios más vulnerables de la capital, llevando ayuda espiritual y material 
+              a familias desplazadas y en condición de pobreza.
+            </p>
+            <div class="location-stats">
+              <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <span>500+ personas impactadas</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-bible"></i>
+                <span>100+ decisiones por Cristo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ortega (Tolima) -->
+        <div class="location-card">
+          <div class="location-header">
+            <i class="fas fa-mountain"></i>
+            <h4>Ortega (Tolima)</h4>
+          </div>
+          <div class="location-content">
+            <img src="./assets/img/misiones/ortega.jpg" alt="Misión Ortega" class="location-img">
+            <p>
+              En el corazón del Tolima, apoyamos comunidades campesinas con programas de alimentación, 
+              escuelas bíblicas y construcción de viviendas dignas.
+            </p>
+            <div class="location-stats">
+              <div class="stat-item">
+                <i class="fas fa-home"></i>
+                <span>20 viviendas mejoradas</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-utensils"></i>
+                <span>300 almuerzos mensuales</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Venezuela -->
+        <div class="location-card">
+          <div class="location-header">
+            <i class="fas fa-hands-helping"></i>
+            <h4>Venezuela</h4>
+          </div>
+          <div class="location-content">
+            <img src="./assets/img/misiones/venezuela.jpg" alt="Misión Venezuela" class="location-img">
+            <p>
+              Cruzamos fronteras para llevar ayuda humanitaria y esperanza en Cristo a comunidades 
+              venezolanas afectadas por la crisis económica.
+            </p>
+            <div class="location-stats">
+              <div class="stat-item">
+                <i class="fas fa-box-open"></i>
+                <span>1.5 toneladas de ayuda</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-pray"></i>
+                <span>50+ grupos de oración</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal-footer">
+      <button class="btn btn-primary" (click)="modal.close()">
+        <i class="fas fa-check"></i> Entendido
+      </button>
+      <button class="btn btn-outline">
+        <i class="fas fa-hand-holding-heart"></i> Quiero ayudar
+      </button>
+    </div>
+  </div>
+</ng-template>

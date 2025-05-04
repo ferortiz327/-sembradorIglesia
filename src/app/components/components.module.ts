@@ -17,6 +17,8 @@ import { DonationsComponent } from './donations/donations.component';
 import { BeliefComponent } from './belief/belief.component';
 import { MaterialModule } from 'app/shared/material/material.module';
 import { ModalPromotionsComponent } from './modal-promotions/modal-promotions.component';
+import { MissionsComponent } from './missions/missions.component';
+import { MisionEsperanzaModalComponent } from './mision-esperanza-modal/mision-esperanza-modal.component';
 
 @NgModule({
     imports: [
@@ -38,7 +40,9 @@ import { ModalPromotionsComponent } from './modal-promotions/modal-promotions.co
         CalendarComponent,
         DonationsComponent,
         BeliefComponent,
-        ModalPromotionsComponent
+        ModalPromotionsComponent,
+        MissionsComponent,
+        MisionEsperanzaModalComponent
     ],
     entryComponents: [NgbdModalContent],
     exports:[ ComponentsComponent]

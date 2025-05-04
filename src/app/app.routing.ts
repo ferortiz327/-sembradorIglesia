@@ -11,6 +11,7 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { DonationsComponent } from './components/donations/donations.component';
 import { BeliefComponent } from './components/belief/belief.component';
+import { MissionsComponent } from './components/missions/missions.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'nucleoicons', component: NucleoiconsComponent },
-  { path: 'enQueCreemos', component: BeliefComponent }
+  { path: 'enQueCreemos', component: BeliefComponent },
+  { path: 'misiones', component: MissionsComponent }
 ];
 
 @NgModule({
