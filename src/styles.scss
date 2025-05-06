@@ -1,17 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-/* Estilos para el modal */
-.mission-modal-container {
-    .mat-dialog-container {
-      padding: 0;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+// Estilos para el backdrop (fondo oscuro)
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  &.show {
+    opacity: 1;
   }
-  
-  /* Estilos responsivos */
-  @media (max-width: 768px) {
-    .mission-modal-container .mat-dialog-container {
-      max-width: 95vw;
-      margin: 10px auto;
-    }
-  }
+}

@@ -8,18 +8,11 @@ import { ModalService } from 'app/services/modal.service';
 })
 export class MissionsComponent {
   modalVisible = false;
-  constructor(private modalService: ModalService) {}
+  constructor(private modalService: ModalService) { }
 
 
   openMisionEsperanza() {
     console.log('Intentando abrir modal'); // Verifica en consola
-    this.modalService.openMisionEsperanza().subscribe({
-      next: (result) => {
-        console.log('Modal cerrado con:', result);
-      },
-      error: (err) => {
-        console.error('Error en el modal:', err);
-      }
-    });
+    this.modalService.openMisionEsperanza();
   }
 }

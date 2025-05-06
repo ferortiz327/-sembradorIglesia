@@ -20,6 +20,7 @@ import { ModalPromotionsComponent } from './modal-promotions/modal-promotions.co
 import { MissionsComponent } from './missions/missions.component';
 import { MisionEsperanzaModalComponent } from './mision-esperanza-modal/mision-esperanza-modal.component';
 
+
 @NgModule({
     imports: [
         CommonModule,

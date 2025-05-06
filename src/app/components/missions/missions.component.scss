@@ -443,3 +443,38 @@ $gray-800: #424242;
       }
     }
   }
+
+  .modal-backdrop {
+    z-index: 1040 !important;
+  }
+  
+  .modal {
+    z-index: 1050 !important;
+    display: block !important;
+  }
+
+  /* Asegura que el modal sea visible */
+.mission-modal-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(0, 0) !important;
+}
+
+/* Fondo del modal */
+.modal-backdrop.show {
+  opacity: 0.5 !important;
+}
+
+/* Contenedor principal del modal */
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Asegura que el modal esté encima del backdrop */
+.modal {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}

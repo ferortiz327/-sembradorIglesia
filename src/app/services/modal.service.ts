@@ -34,18 +34,22 @@ export class ModalService {
   }
 
   openMisionEsperanza() {
-    try {
-      const dialogRef = this.dialog.open(MisionEsperanzaModalComponent, {
-        width: '90%',
-        maxWidth: '800px',
-        panelClass: 'custom-modal',
-        disableClose: false
-      });
+    const modalRef = this.modalService.open(MisionEsperanzaModalComponent, {
+      size: 'lg',
+      centered: true,
+      backdrop: 'static'
+    });
 
-      return dialogRef.afterClosed();
-    } catch (error) {
-      console.error('Error al abrir modal:', error);
-      throw error;
-    }
+    modalRef.result.then(
+      (result) => {
+        console.log('Modal cerrado con:', result);
+        if (result === 'help') {
+          // Lógica cuando el usuario quiere ayudar
+        }
+      },
+      (reason) => {
+        console.log('Modal descartado', reason);
+      }
+    );
   }
 }

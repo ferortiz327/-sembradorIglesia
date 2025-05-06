@@ -1,5 +1,6 @@
 import { Component, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventEmitter } from 'stream';
 
 @Component({
@@ -8,13 +9,13 @@ import { EventEmitter } from 'stream';
   styleUrls: ['./mision-esperanza-modal.component.scss']
 })
 export class MisionEsperanzaModalComponent {
-  constructor(
-    public dialogRef: MatDialogRef<MisionEsperanzaModalComponent>
-  ) {
-    console.log('Modal creado'); // Verifica en consola
-  }
+  constructor(public activeModal: NgbActiveModal) {}
 
   closeModal() {
-    this.dialogRef.close();
+    this.activeModal.close('closed');
+  }
+
+  quieroAyudar() {
+    this.activeModal.close('help');
   }
 }
