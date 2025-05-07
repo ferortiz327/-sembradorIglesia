@@ -26,6 +26,13 @@ export class ModalPromotionsComponent implements OnInit {
   cargarActividades() {
     // Reemplaza con tu lógica de carga real
     this.actividades = [
+
+      {
+        titulo: 'Congreso de Mujeres',
+        descripcion: 'Descripción de la actividad más reciente 1',
+        fecha: 'Jueves 6:00 PM',
+        imagen: './assets/img/promotions/oracionMiercoles.jpeg'
+      },
       {
         titulo: 'Estudio Bíblico',
         descripcion: 'Descripción de la actividad más reciente 1',
@@ -37,6 +44,12 @@ export class ModalPromotionsComponent implements OnInit {
         descripcion: 'Descripción de la actividad más reciente 1',
         fecha: 'Jueves 6:00 PM',
         imagen: './assets/img/promotions/vastago.jpeg'
+      },
+      {
+        titulo: 'Congreso de Mujeres',
+        descripcion: 'Descripción de la actividad más reciente 1',
+        fecha: 'Jueves 6:00 PM',
+        imagen: './assets/img/promotions/congreso.jpeg'
       }
     ];
   }
