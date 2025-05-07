@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MisionEsperanzaModalComponent } from 'app/components/mision-esperanza-modal/mision-esperanza-modal.component';
 import { ModalPromotionsComponent } from 'app/components/modal-promotions/modal-promotions.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +11,9 @@ import { ModalPromotionsComponent } from 'app/components/modal-promotions/modal-
 export class ModalService {
   private modalRef: any;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,
+    private dialog: MatDialog
+  ) {}
 
 
   mostrarModalActividades() {
@@ -26,5 +31,25 @@ export class ModalService {
     this.modalRef.result.finally(() => {
       this.modalRef = null;
     });
+  }
+
+  openMisionEsperanza() {
+    const modalRef = this.modalService.open(MisionEsperanzaModalComponent, {
+      size: 'lg',
+      centered: true,
+      backdrop: 'static'
+    });
+
+    modalRef.result.then(
+      (result) => {
+        console.log('Modal cerrado con:', result);
+        if (result === 'help') {
+          // Lógica cuando el usuario quiere ayudar
+        }
+      },
+      (reason) => {
+        console.log('Modal descartado', reason);
+      }
+    );
   }
 }

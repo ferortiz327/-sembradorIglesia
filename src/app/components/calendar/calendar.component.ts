@@ -10,7 +10,7 @@ export class CalendarComponent {
   dias: { nombre: string, actividades: string[] }[] = [
     { nombre: 'Lunes', actividades: [
         'Oración – 9:00 a.m. A 11:00 a.m.',
-        'Sembrar para Cosechar – 6:30 p.m.',
+        'Sembrar para Cosechar – 6:00 p.m.',
         'Servidores– 7:00 p.m.',
     ] },
     { nombre: 'Martes', actividades: [
